@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add account</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-4">
+        <form id="addAccountForm">
+            <div class="mb-3">
+                <label for="accountHolder" class="form-label">Account Holder</label>
+                <input type="text" class="form-control" id="accountHolder" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="accountType" class="form-label">Account Type</label>
+                <select class="form-control" id="accountType" required>
+                    <option value="">Select Account Type</option>
+                    <option value="Savings">Savings</option>
+                    <option value="Current">Current</option>
+                    <option value="Salary">Salary</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="balance" class="form-label" >Initial Balance</label>
+                <input type="number" class="form-control" id="balance" step="0.01" required>
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-control" id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">submit</button>
+        </form>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>

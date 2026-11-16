@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bank-accounts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Bank Dashboard</h2>
+            <button class="btn btn-primary"><a class="bg-white" href="add.html">Add Account</a></button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                   <tr>
+                    <th>id</th>
+                    <th>Account Number</th>
+                    <th>Account Holder</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Account Type</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                   </tr>
+                </thead>
+                <tbody id="account-list">  
+                </tbody>
+            </table>
+        </div>
+        <div class="card shadow p-3 mb-4" id="total"></div>
+    </div>
+    <script type="module" src="./js/display.js"></script>
+</body>
+</html>

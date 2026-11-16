@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <main class="container py-5">
+        <div class="mb-4">
+            <h1 class="h2">Find an account</h1>
+            <p class="text-secondary">Search by account number, account holder, email, or phone.</p>
+        </div>
+        <label for="account-search" class="form-label">Search accounts</label>
+        <input id="account-search" class="form-control mb-3" type="search" placeholder="For example, ACC1001 or Arun Kumar"
+            autocomplete="off">
+        <p id="search-count" class="text-secondary" aria-live="polite">
+            Enter an account number, name, email, or phone to search.
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Account Holder</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="search-results"></tbody>
+            </table>
+        </div>
+    </main>
+    <script type="module" src="./js/search.js"></script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 import { addBankAccount, bankAccounts } from "./data.js";
-
 const addAccountForm = document.getElementById("addAccountForm");
 const accountHolder = document.getElementById("accountHolder");
 const email = document.getElementById("email");

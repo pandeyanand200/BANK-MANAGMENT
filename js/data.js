@@ -141,12 +141,40 @@ export let bankAccounts = storedAccounts ? JSON.parse(storedAccounts) : initialA
 if (!Array.isArray(bankAccounts)) {
   bankAccounts = [...initialAccounts];
 }
-export function saveAccounts() {
+export function saveAccounts(accounts = bankAccounts) {
   try {
-    localStorage.setItem(storageKey, JSON.stringify(bankAccounts));
+    localStorage.setItem(storageKey, JSON.stringify(accounts));
+    return true;
   } catch (error) {
     console.warn("Unable to save accounts:", error);
+    return false;
   }
+}
+
+export function updateBankAccount(id, updates) {
+  const updatedAccounts = bankAccounts.map((account) =>
+    account.id === id ? { ...account, ...updates } : account,
+  );
+  if (updatedAccounts.every((account, index) => account === bankAccounts[index])) {
+    return false;
+  }
+  if (!saveAccounts(updatedAccounts)) {
+    return false;
+  }
+  bankAccounts = updatedAccounts;
+  return true;
+}
+
+export function deleteBankAccount(id) {
+  const updatedAccounts = bankAccounts.filter((account) => account.id !== id);
+  if (updatedAccounts.length === bankAccounts.length) {
+    return false;
+  }
+  if (!saveAccounts(updatedAccounts)) {
+    return false;
+  }
+  bankAccounts = updatedAccounts;
+  return true;
 }
 
 export function saveTransactions() {

@@ -116,12 +116,12 @@ function displayAccounts() {
     const actions = document.createElement("td");
     actions.className = "text-nowrap";
     actions.appendChild(
-      createButton("Edit", "btn-primary me-1", `Edit account ${account.accountNumber}`, () => {
+      createButton("Edit", "btn-secondary me-1", `Edit account ${account.accountNumber}`, () => {
         tbody.replaceChild(renderEditRow(account), row);
       }),
     );
     actions.appendChild(
-      createButton("Delete", "btn-danger", `Delete account ${account.accountNumber}`, () => {
+      createButton("Delete", "btn-secondary", `Delete account ${account.accountNumber}`, () => {
         if (!window.confirm(`Delete account ${account.accountNumber}?`)) {
           return;
         }
